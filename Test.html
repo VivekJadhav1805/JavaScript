@@ -1,0 +1,56 @@
+<html>
+ <head>
+  <title>ajax test application</title>
+  <script type='text/javascript'>
+      function ajaxTest()
+	  {  let xhttp=new XMLHttpRequest();
+		 xhttp.onreadystatechange=function(){
+		     if(this.readyState==4 && this.status==200)
+			   {   let txtResponse=this.responseText;  
+			       console.log(typeof(txtResponse));
+				   let jsonObj=JSON.parse(txtResponse);
+				   let div=document.getElementById("container");
+				   let table=document.createElement("table");
+				   let tr=document.createElement("tr");
+				   let th=document.createElement("th");
+				   th.innerHTML="Employee ID";
+				   tr.appendChild(th);
+				   th=document.createElement("th");
+				   th.innerHTML="Employee Name";
+				   tr.appendChild(th);
+				   th=document.createElement("th");
+				   th.innerHTML="Employee Salary";
+				   tr.appendChild(th);
+				   table.appendChild(tr);
+				  
+				   jsonObj.forEach((item)=>{
+				     tr=document.createElement("tr"); 
+					 td=document.createElement("td");
+					 td.innerHTML=""+item.id;
+					 tr.appendChild(td);
+					  td=document.createElement("td");
+					 td.innerHTML=""+item.name;
+					 tr.appendChild(td);
+					  td=document.createElement("td");
+					 td.innerHTML=""+item.sal;
+					 tr.appendChild(td);
+					 table.appendChild(tr);
+				   })
+				   div.appendChild(table);   
+			   } 
+		 };
+		 xhttp.open("GET","/viewemp",true);
+	      xhttp.send();
+	  
+	  }
+  </script>
+ </head>
+ <body>
+  <input type="button"
+  name="s" value="Update Page"  
+  style='width:400px;height:40px;padding:20px; margin-left:100px'
+  onclick="ajaxTest()" />
+  <div id="container">
+  </div>
+ <body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+ <head>
+   <title> i am form control</title>
+   <style>
+      #btn{
+	     width:400px;
+		 height:40px;
+	  }
+   </style>
+   
+   <script type='text/javascript'>
+       function createForm(){
+	      let myForm=document.createElement("form");
+		   myForm.setAttribute("name","frm");
+		   myForm.setAttribute("method","POST");
+		   myForm.setAttribute("action","");
+		   
+		     let nameText=document.createElement("input");
+			  nameText.setAttribute("type","text");
+			  nameText.setAttribute("name","firstName");
+			  nameText.setAttribute("id","txtName");
+			  nameText.setAttribute("placeHolder","Enter name");
+			  nameText.setAttribute("value","");
+			  nameText.style.width="400px";
+			  nameText.style.padding="20px";
+			  nameText.style.marginTop="20px";
+			  
+			  myForm.appendChild(nameText);
+			  
+			  
+			  let emailText=document.createElement("input");
+			  emailText.setAttribute("type","email");
+			  emailText.setAttribute("name","emailText");
+			  emailText.setAttribute("id","emailTxt");
+			  emailText.setAttribute("placeHolder","Enter Email");
+			  emailText.setAttribute("value","");
+			  emailText.style.width="400px";
+			  emailText.style.padding="20px";
+			  emailText.style.marginTop="20px";
+			  
+			  
+			    myForm.appendChild(emailText);
+				
+				 let button=document.createElement("input");
+			  button.setAttribute("type","button");
+			  button.setAttribute("name","btn");
+			  button.setAttribute("id","btn");
+		 	  button.setAttribute("value","Register");
+			  button.style.width="400px";
+			  button.style.padding="20px";
+			  button.style.marginTop="20px";
+			  
+			  button.addEventListener("mouseover",function(){
+			       this.style.color="white";
+				   this.style.backgroundColor="teal";
+			  });
+			  
+			   button.addEventListener("mouseleave",function(){
+			       this.style.color="black";
+				   this.style.backgroundColor="white";
+			  });
+			    myForm.appendChild(button);
+			  
+		   let pageBody=document.getElementById("mainContainer");
+		   pageBody.appendChild(myForm);
+	    }
+   </script>
+ </head>
+ <body id="mainContainer">
+   <input type="button" name='b' id="btn" value='Create Form Using JavaScript' onclick="createForm()" />
+ </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change  the heading text</title>
+
+    <script type="text/javascript">
+        function show(){
+            let heading = document.getElementById("h");
+            heading.innerHTML = "Good Morning Pune";
+            heading.style.backgroundColor="yellow";
+            heading.style.color="white";
+            heading.style.padding="20px";
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" name="name" value="Change text color" style="width: 400px;height: 40px;" onclick="show()">
+    <br>
+    <h1 id="h">Good Morning Pune</h1>    
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebal Demo</title>
+    <style>
+        input{
+            width: 400px;
+            height: 40px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function genTeble(){
+            document.getElementById("gridContainer").innerHTML="";
+            let no = parseInt(document.getElementById("f").value);
+            
+            let table = document.createElement("table");
+            table.style.width="50%";
+            let tr=document.createElement("tr");
+            let th=document.createElement("th");
+            th.innerHTML-"Iteration";
+            tr.appendChild(th);
+            th=document.createElement("th");
+            th.innerHTML="X";
+            tr.appendChild(th);
+
+            th=document.createElement("th");
+            th.innerHTML="Number";
+            tr.appendChild(th);
+
+            th=document.createElement("th");
+		    th.innerHTML="=";
+		    tr.appendChild(th);
+		 
+		    th=document.createElement("th");
+		    th.innerHTML="Result";
+		    tr.appendChild(th);
+		 
+		     table.appendChild(tr);
+
+        for(var i=1;i<=10; i++)
+		 {
+		    let row=document.createElement("tr");
+		     row.style.textAlign="center";
+			let col=document.createElement("td");
+			col.innerHTML=""+i;
+			row.appendChild(col);
+			col.style.border="2px solid red";
+			col=document.createElement("td");
+			col.innerHTML="X";	
+			col.style.border="2px solid red";
+		
+			row.appendChild(col);
+			
+			col=document.createElement("td");
+			col.innerHTML=""+no;
+			col.style.border="2px solid red";
+			row.appendChild(col);
+			
+			col=document.createElement("td");
+			col.innerHTML="=";;
+			col.style.border="2px solid red";
+			row.appendChild(col);
+			
+			col=document.createElement("td");
+            col.innerHTML=""+(i*no);
+			col.style.border="2px solid red";
+			row.appendChild(col);
+			table.appendChild(row);		 	
+		 }
+
+         let container=document.getElementById("gridContainer");
+		 container.appendChild(table);
+
+        }
+    </script>
+
+</head>
+<body>
+    <input type="text" name="f" id="f" value="">&nbsp;
+
+    <input type="button" name="b" value="Print Table" onclick="genTeble()">
+     <br><br>
+   <div id="gridContainer">
+   </div>
+   </body>
+   
+</body>
+</html>

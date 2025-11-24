@@ -1,0 +1,28 @@
+<html>
+ <head>
+   <title>remove element app</title>
+   <script>
+    function changeImage(){
+	   let ictrl=document.getElementById("j");
+	   ictrl.src='second.png';
+	}
+   </script>
+   <style>
+     input{
+	   width:500px;
+	   height:40px;
+	   margin-left:100px;
+	 }
+	 img{
+	  margin-left:100px;
+	  margin-top:50px;
+	 }
+	 
+   </style>
+ </head>
+ <body id="parent">
+   <img src='first.png'  id="j" alt="image not found" /> <br><br>
+   <input type='submit' name='s' value='Change Image' onclick='changeImage()'/>
+ </body>
+</html>
+bgr
